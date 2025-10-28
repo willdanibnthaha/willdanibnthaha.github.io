@@ -1,72 +1,169 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="Wildan Ibn Thaha" />
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Wildan Ibn Thaha" />
+    <title>Wildan Ibn Thaha | Portofolio</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Wildan Ibn Thaha | Portofolio</title>
-        <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
-        <!--
-        These two scripts have been added for the testing, please do not edit or remove them
-        -->
-        <script src="https://unpkg.com/rrweb@latest/dist/rrweb.min.js"></script>
-        <script src="https://d2adkz2s9zrlge.cloudfront.net/rrweb-recorder-20250919-1.js"></script>
-        <!--
-        These two scripts have been added for the Visual Edits, please do not edit or remove them
-        -->
-        <script>
-            // Only load visual edit scripts when inside an iframe and visual edits are enabled
-            if (window.self !== window.top && '%REACT_APP_ENABLE_VISUAL_EDITS%' === 'true') {
-                // Load debug monitor script
-                var debugScript = document.createElement('script');
-                debugScript.src = 'https://assets.emergent.sh/scripts/debug-monitor.js';
-                document.head.appendChild(debugScript);
+    <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+    <script src="https://unpkg.com/rrweb@latest/dist/rrweb.min.js"></script>
+    <script src="https://d2adkz2s9zrlge.cloudfront.net/rrweb-recorder-20250919-1.js"></script>
 
-                // Configure Tailwind
-                window.tailwind = window.tailwind || {};
-                tailwind.config = {
-                    corePlugins: { preflight: false },
-                };
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-                // Load Tailwind CDN
-                var tailwindScript = document.createElement('script');
-                tailwindScript.src = 'https://cdn.tailwindcss.com';
-                document.head.appendChild(tailwindScript);
-            }
-        </script>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #0a0a0a;
+        color: #fff;
+      }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-        <a
-    id="instagram-badge"
-    target="_blank"
-    href="https://www.instagram.com/wildanibnthaha?igsh=MWx2NzQ3cjIyZmV6NQ=="
-    style="
+      .section-container {
+        padding: 80px 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .title-underline {
+        width: 60px;
+        height: 3px;
+        background-color: #00d8ff;
+        margin: 10px auto 40px auto;
+        border-radius: 3px;
+      }
+
+      .about-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #d1d5db;
+        text-align: center;
+      }
+
+      .about-features {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .feature-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 25px;
+        width: 260px;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .feature-icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .feature-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .feature-desc {
+        color: #9ca3af;
+        font-size: 0.95rem;
+      }
+
+      /* Animasi fade-in */
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- ROOT / ABOUT SECTION -->
+    <div id="root">
+      <section id="about" class="section-container fade-in-section">
+        <div class="section-header">
+          <h2 class="section-title">Tentang Saya</h2>
+          <div class="title-underline"></div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-description">
+              Saya menggabungkan kreativitas manusia dengan kekuatan AI untuk
+              menciptakan website yang cepat, efisien, dan modern.
+            </p>
+            <p class="about-description">
+              Tidak menggunakan template — semua dibuat cerdas sesuai kebutuhan
+              Anda.
+            </p>
+          </div>
+
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i data-lucide="sparkles" size="32"></i>
+              </div>
+              <h3 class="feature-title">AI-Powered</h3>
+              <p class="feature-desc">Menggunakan teknologi AI terkini</p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i data-lucide="zap" size="32"></i>
+              </div>
+              <h3 class="feature-title">Cepat & Efisien</h3>
+              <p class="feature-desc">Proses pengembangan yang optimal</p>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i data-lucide="code" size="32"></i>
+              </div>
+              <h3 class="feature-title">Kode Berkualitas</h3>
+              <p class="feature-desc">Clean code dan modern design</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Instagram Badge -->
+    <a
+      id="instagram-badge"
+      target="_blank"
+      href="https://www.instagram.com/wildanibnthaha?igsh=MWx2NzQ3cjIyZmV6NQ=="
+      style="
         display: flex !important;
         align-items: center !important;
         position: fixed !important;
@@ -74,107 +171,105 @@
         right: 20px;
         text-decoration: none;
         padding: 6px 10px;
-        font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;,
-            Roboto, Oxygen, Ubuntu, Cantarell, &quot;Open Sans&quot;,
-            &quot;Helvetica Neue&quot;, sans-serif !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
         font-size: 12px !important;
         z-index: 9999 !important;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
         border-radius: 8px !important;
         background-color: #ffffff !important;
         border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    "
->
-    <div style="display: flex; flex-direction: row; align-items: center">
+      "
+    >
+      <div style="display: flex; flex-direction: row; align-items: center">
         <img
-            style="width: 20px; height: 20px; margin-right: 8px"
-            src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+          style="width: 20px; height: 20px; margin-right: 8px"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
         />
         <p
-            style="
-                color: #000000;
-                font-family: -apple-system, BlinkMacSystemFont,
-                    &quot;Segoe UI&quot;, Roboto, Oxygen, Ubuntu,
-                    Cantarell, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;,
-                    sans-serif !important;
-                font-size: 12px !important;
-                
-                /* Perubahan di sini */
-                margin: 0; 
-                position: relative;
-                top: -1px; /* Ini menggeser teks ke atas 1px */
-            "
+          style="
+            color: #000000;
+            margin: 0;
+            position: relative;
+            top: -1px;
+            font-size: 12px !important;
+          "
         >
-            My Instagram
+          My Instagram
         </p>
-    </div>
-</a>
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
-                    (e._i = []),
-                    (e.init = function (i, s, a) {
-                        function g(t, e) {
-                            var o = e.split(".");
-                            2 == o.length && ((t = t[o[0]]), (e = o[1])),
-                                (t[e] = function () {
-                                    t.push(
-                                        [e].concat(
-                                            Array.prototype.slice.call(
-                                                arguments,
-                                                0,
-                                            ),
-                                        ),
-                                    );
-                                });
-                        }
-                        ((p = t.createElement("script")).type =
-                            "text/javascript"),
-                            (p.crossOrigin = "anonymous"),
-                            (p.async = !0),
-                            (p.src =
-                                s.api_host.replace(
-                                    ".i.posthog.com",
-                                    "-assets.i.posthog.com",
-                                ) + "/static/array.js"),
-                            (r =
-                                t.getElementsByTagName(
-                                    "script",
-                                )[0]).parentNode.insertBefore(p, r);
-                        var u = e;
-                        for (
-                            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
-                            n < o.length;
-                            n++
-                        )
-                            g(u, o[n]);
-                        e._i.push([i, s, a]);
-                    }),
-                    (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+      </div>
+    </a>
+
+    <!-- Posthog Analytics -->
+    <script>
+      !(function (t, e) {
+        var o, n, p, r;
+        e.__SV ||
+          ((window.posthog = e),
+          (e._i = []),
+          (e.init = function (i, s, a) {
+            function g(t, e) {
+              var o = e.split(".");
+              2 == o.length && ((t = t[o[0]]), (e = o[1])),
+                (t[e] = function () {
+                  t.push([e].concat(Array.prototype.slice.call(arguments, 0)));
+                });
+            }
+            ((p = t.createElement("script")).type = "text/javascript"),
+              (p.crossOrigin = "anonymous"),
+              (p.async = !0),
+              (p.src =
+                s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") +
+                "/static/array.js"),
+              (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(
+                p,
+                r
+              );
+            var u = e;
+            void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
+              (u.people = u.people || []),
+              (u.toString = function (t) {
+                var e = "posthog";
+                return (
+                  "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e
+                );
+              }),
+              (u.people.toString = function () {
+                return u.toString(1) + ".people (stub)";
+              }),
+              (o =
+                "init capture identify alias set_config reset startSessionRecording stopSessionRecording captureException".split(
+                  " "
+                ));
+            for (n = 0; n < o.length; n++) g(u, o[n]);
+            e._i.push([i, s, a]);
+          }),
+          (e.__SV = 1));
+      })(document, window.posthog || []);
+      posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
+        api_host: "https://us.i.posthog.com",
+        person_profiles: "identified_only",
+      });
+    </script>
+
+    <!-- Lucide Icon Init -->
+    <script>
+      lucide.createIcons();
+
+      // Fade-in animation observer
+      const faders = document.querySelectorAll('.fade-in-section');
+      const appearOptions = { threshold: 0.2 };
+      const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+      });
+    </script>
+  </body>
 </html>
