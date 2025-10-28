@@ -543,6 +543,7 @@
         align-items: center;
         gap: 8px;
         transition: all 0.3s ease;
+        text-decoration: none; /* Tambahan agar link tidak bergaris bawah */
       }
 
       .demo-button:hover {
@@ -811,7 +812,7 @@
         <div class="hero-content">
           <h1 class="section-title" style="font-size: 72px; background: none; -webkit-text-fill-color: initial;">HERO SECTION</h1>
           <p class="section-subtitle">Placeholder untuk Hero</p>
-          </div>
+        </div>
       </section>
 
       <section id="about" class="section-container fade-in-section">
@@ -819,7 +820,6 @@
           <h2 class="section-title">Tentang Saya</h2>
           <div class="title-underline"></div>
         </div>
-
         <div class="about-content">
           <div class="about-text">
             <p class="about-description">
@@ -831,7 +831,6 @@
               Anda.
             </p>
           </div>
-
           <div class="about-features">
             <div class="feature-item">
               <div class="feature-icon">
@@ -840,7 +839,6 @@
               <h3 class="feature-title">AI-Powered</h3>
               <p class="feature-desc">Menggunakan teknologi AI terkini</p>
             </div>
-
             <div class="feature-item">
               <div class="feature-icon">
                 <i data-lucide="zap"></i>
@@ -848,7 +846,6 @@
               <h3 class="feature-title">Cepat & Efisien</h3>
               <p class="feature-desc">Proses pengembangan yang optimal</p>
             </div>
-
             <div class="feature-item">
               <div class="feature-icon">
                 <i data-lucide="code"></i>
@@ -857,20 +854,16 @@
               <p class="feature-desc">Clean code dan modern design</p>
             </div>
           </div>
-          
           <div class="mt-10 flex flex-wrap justify-center gap-4">
-            
             <button class="btn-primary">
               Tombol Default
             </button>
-            
             <button class="btn-secondary inline-flex items-center gap-2">
               <i data-lucide="mail"></i>
               Hubungi Saya
             </button>
-
           </div>
-          </div>
+        </div>
       </section>
 
       <section id="services" class="section-container fade-in-section dark-section">
@@ -878,7 +871,7 @@
           <h2 class="section-title">SERVICES SECTION</h2>
           <div class="title-underline"></div>
           <p class="section-subtitle">Placeholder untuk Services</p>
-          </div>
+        </div>
       </section>
 
       <section id="process" class="section-container fade-in-section">
@@ -886,23 +879,133 @@
           <h2 class="section-title">PROCESS SECTION</h2>
           <div class="title-underline"></div>
           <p class="section-subtitle">Placeholder untuk Process</p>
-          </div>
+        </div>
       </section>
 
-      <section id="portfolio" class="section-container fade-in-section dark-section">
-        <div class="section-header">
-          <h2 class="section-title">PORTFOLIO SECTION</h2>
-          <div class="title-underline"></div>
-          <p class="section-subtitle">Placeholder untuk Portfolio</p>
+      <section id="portfolio" class="section-container dark-section fade-in-section">
+        <div class="content-wrapper">
+          <div class="section-header">
+            <h2 class="section-title">Portofolio</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle">Contoh project yang telah dikembangkan</p>
           </div>
-      </section>
 
+          <div class="portfolio-grid">
+            
+            <div class="portfolio-card">
+              <div class="portfolio-image-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop" 
+                  alt="Web Portofolio Profesional"
+                  class="portfolio-image"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="demo-button">
+                    <i data-lucide="external-link"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Web Portofolio Profesional</h3>
+                <p class="portfolio-description">Portofolio modern dengan animasi interaktif dan desain elegan</p>
+              </div>
+            </div>
+            
+            <div class="portfolio-card">
+              <div class="portfolio-image-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1621857093087-7daa85ab14a6?w=800&h=600&fit=crop" 
+                  alt="Landing Page Bisnis"
+                  class="portfolio-image"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="demo-button">
+                    <i data-lucide="external-link"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Landing Page Bisnis</h3>
+                <p class="portfolio-description">Landing page dengan konversi tinggi untuk bisnis modern</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card">
+              <div class="portfolio-image-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1730993872148-83acdfb597e8?w=800&h=600&fit=crop" 
+                  alt="Company Profile"
+                  class="portfolio-image"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="demo-button">
+                    <i data-lucide="external-link"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Company Profile</h3>
+                <p class="portfolio-description">Website company profile yang profesional dan informatif</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card">
+              <div class="portfolio-image-wrapper">
+                <img 
+                  src="https://images.pexels.com/photos/16245252/pexels-photo-16245252.jpeg?w=800&h=600&fit=crop" 
+                  alt="Website Produk/Brand"
+                  class="portfolio-image"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="demo-button">
+                    <i data-lucide="external-link"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Website Produk/Brand</h3>
+                <p class="portfolio-description">Showcase produk dengan visual yang memukau dan user-friendly</p>
+              </div>
+            </div>
+
+            <div class="portfolio-card">
+              <div class="portfolio-image-wrapper">
+                <img 
+                  src="https://images.unsplash.com/photo-1684369175833-4b445ad6bfb5?w=800&h=600&fit=crop" 
+                  alt="Web AI Automation (Chatbot, API)"
+                  class="portfolio-image"
+                  loading="lazy"
+                />
+                <div class="portfolio-overlay">
+                  <a href="#" target="_blank" rel="noopener noreferrer" class="demo-button">
+                    <i data-lucide="external-link"></i>
+                    Live Demo
+                  </a>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Web AI Automation (Chatbot, API)</h3>
+                <p class="portfolio-description">Integrasi chatbot cerdas dan automasi dengan teknologi AI</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
       <section id="contact" class="section-container fade-in-section">
         <div class="section-header">
           <h2 class="section-title">CONTACT SECTION</h2>
           <div class="title-underline"></div>
           <p class="section-subtitle">Placeholder untuk Contact</p>
-          </div>
+        </div>
       </section>
 
       <footer id="footer" class="footer-section fade-in-section">
@@ -1017,7 +1120,7 @@
 
       // Fade-in animation observer
       const faders = document.querySelectorAll('.fade-in-section');
-      const appearOptions = { threshold: 0.1 }; // Sesuai 'portfolio.css'
+      const appearOptions = { threshold: 0.1 };
       const appearOnScroll = new IntersectionObserver(function (entries, observer) {
         entries.forEach(entry => {
           if (!entry.isIntersecting) return;
