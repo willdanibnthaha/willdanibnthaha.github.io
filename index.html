@@ -218,7 +218,9 @@
         transition: all 0.3s ease;
         min-height: 56px;
         text-decoration: none;
-        display: inline-block;
+        display: inline-flex; /* Diubah agar rapi */
+        align-items: center; /* Diubah agar rapi */
+        justify-content: center; /* Diubah agar rapi */
       }
 
       .btn-primary:hover {
@@ -240,7 +242,9 @@
         min-height: 56px;
         backdrop-filter: blur(10px);
         text-decoration: none;
-        display: inline-block;
+        display: inline-flex; /* Diubah agar rapi */
+        align-items: center; /* Diubah agar rapi */
+        justify-content: center; /* Diubah agar rapi */
       }
 
       .btn-secondary:hover {
@@ -880,16 +884,17 @@
               <p class="feature-desc">Clean code dan modern design</p>
             </div>
           </div>
+          
           <div class="mt-10 flex flex-wrap justify-center gap-4">
-            <button class="btn-primary">
+            <a href="#portfolio" class="btn-primary">
               Tombol Default
-            </button>
-            <button class="btn-secondary inline-flex items-center gap-2">
+            </a>
+            <a href="#contact" class="btn-secondary inline-flex items-center gap-2">
               <i data-lucide="mail"></i>
               Hubungi Saya
-            </button>
+            </a>
           </div>
-        </div>
+          </div>
       </section>
 
       <section id="services" class="section-container dark-section fade-in-section">
@@ -1175,6 +1180,7 @@
           </div>
         </div>
       </section>
+
       <footer id="footer" class="footer-section fade-in-section">
         <div class="footer-particles">
           <div class="particle"></div>
