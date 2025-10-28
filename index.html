@@ -11,18 +11,58 @@
     <script src="https://unpkg.com/rrweb@latest/dist/rrweb.min.js"></script>
     <script src="https://d2adkz2s9zrlge.cloudfront.net/rrweb-recorder-20250919-1.js"></script>
 
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Lucide Icons -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Menyesuaikan dengan style 'shadcn/ui' dan tema kamu
+              border: "rgba(255, 255, 255, 0.1)", // Dari .feature-item
+              input: "rgba(255, 255, 255, 0.1)",  // Sama
+              ring: "#00d8ff", // Dari .title-underline
+              background: "#0a0a0a", // Dari body
+              foreground: "#fff", // Dari body
+              primary: {
+                DEFAULT: "#00d8ff", // Dari .title-underline
+                foreground: "#0a0a0a", // Kontras (hitam)
+              },
+              secondary: {
+                DEFAULT: "rgba(255, 255, 255, 0.05)", // Dari .feature-item
+                foreground: "#fff",
+              },
+              destructive: {
+                DEFAULT: "#ef4444", // Merah (standar tailwind)
+                foreground: "#fff",
+              },
+              muted: {
+                DEFAULT: "rgba(255, 255, 255, 0.08)", // Mirip hover
+                foreground: "#9ca3af", // Dari .feature-desc
+              },
+              accent: {
+                DEFAULT: "rgba(255, 255, 255, 0.08)", // Dari .feature-item:hover
+                foreground: "#fff",
+              },
+            },
+            borderRadius: {
+              lg: "12px", // Dari .feature-item
+              md: "8px",
+              sm: "4px",
+            }
+          }
+        }
+      }
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
       body {
         margin: 0;
         font-family: 'Inter', sans-serif;
-        background-color: #0a0a0a;
-        color: #fff;
+        /* Dihapus agar bisa dikontrol Tailwind */
+        /* background-color: #0a0a0a; */
+        /* color: #fff; */
       }
 
       .section-container {
@@ -106,10 +146,9 @@
     </style>
   </head>
 
-  <body>
+  <body class="bg-background text-foreground">
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <!-- ROOT / ABOUT SECTION -->
     <div id="root">
       <section id="about" class="section-container fade-in-section">
         <div class="section-header">
@@ -154,11 +193,31 @@
               <p class="feature-desc">Clean code dan modern design</p>
             </div>
           </div>
-        </div>
+          
+          <div class="mt-10 flex flex-wrap justify-center gap-4">
+
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+              Tombol Default
+            </button>
+            
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">
+              <i data-lucide="mail" class="size-4 shrink-0"></i>
+              Hubungi Saya
+            </button>
+            
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 h-8 rounded-md px-3 text-xs">
+              Hapus
+            </button>
+            
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 w-9">
+              <i data-lucide="github" class="size-4 shrink-0"></i>
+            </button>
+
+          </div>
+          </div>
       </section>
     </div>
 
-    <!-- Instagram Badge -->
     <a
       id="instagram-badge"
       target="_blank"
@@ -200,7 +259,6 @@
       </div>
     </a>
 
-    <!-- Posthog Analytics -->
     <script>
       !(function (t, e) {
         var o, n, p, r;
@@ -252,7 +310,6 @@
       });
     </script>
 
-    <!-- Lucide Icon Init -->
     <script>
       lucide.createIcons();
 
@@ -273,3 +330,4 @@
     </script>
   </body>
 </html>
+
