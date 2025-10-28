@@ -217,6 +217,8 @@
         cursor: pointer;
         transition: all 0.3s ease;
         min-height: 56px;
+        text-decoration: none; /* Tambahan */
+        display: inline-block; /* Tambahan */
       }
 
       .btn-primary:hover {
@@ -237,6 +239,8 @@
         transition: all 0.3s ease;
         min-height: 56px;
         backdrop-filter: blur(10px);
+        text-decoration: none; /* Tambahan */
+        display: inline-block; /* Tambahan */
       }
 
       .btn-secondary:hover {
@@ -543,7 +547,7 @@
         align-items: center;
         gap: 8px;
         transition: all 0.3s ease;
-        text-decoration: none; /* Tambahan agar link tidak bergaris bawah */
+        text-decoration: none;
       }
 
       .demo-button:hover {
@@ -809,12 +813,31 @@
           <div class="glow-orb glow-orb-2"></div>
           <div class="glow-orb glow-orb-3"></div>
         </div>
+        
         <div class="hero-content">
-          <h1 class="section-title" style="font-size: 72px; background: none; -webkit-text-fill-color: initial;">HERO SECTION</h1>
-          <p class="section-subtitle">Placeholder untuk Hero</p>
+          <div class="hero-text-container fade-up">
+            <h1 class="hero-title">
+              Wildan Ibn Thaha
+            </h1>
+            <p class="hero-subtitle">
+              AI Web Developer | Membangun Website Cerdas dengan Teknologi AI
+            </p>
+            
+            <div class="hero-cta-buttons">
+              <a href="#portfolio" class="btn-primary">
+                Lihat Portofolio
+              </a>
+              <a href="#contact" class="btn-secondary">
+                Hubungi Saya
+              </a>
+            </div>
+          </div>
+
+          <a href="#about" class="scroll-indicator">
+            <i data-lucide="arrow-down" class="scroll-arrow"></i>
+          </a>
         </div>
       </section>
-
       <section id="about" class="section-container fade-in-section">
         <div class="section-header">
           <h2 class="section-title">Tentang Saya</h2>
@@ -1000,6 +1023,7 @@
           </div>
         </div>
       </section>
+
       <section id="contact" class="section-container fade-in-section">
         <div class="section-header">
           <h2 class="section-title">CONTACT SECTION</h2>
